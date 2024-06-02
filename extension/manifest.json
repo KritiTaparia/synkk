@@ -1,5 +1,13 @@
 {
     "manifest_version": 3,
     "name": "synkk",
-    "version": "1.0"
+    "description": "Tab syncing Extension",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/synkk_icon.jpg"
+    },
+    "permissions": [
+        "tabs"
+    ]
 }
