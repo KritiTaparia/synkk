@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const linksSchema = new mongoose.Schema({
     url: String,
-    username: String,
+    userId: String,
     timestamp: { type : Date, default: Date.now }
   });
 const Links = mongoose.model('links', linksSchema);
@@ -15,15 +15,15 @@ async function queryUrls(query={}) {
   return (await Links.find(query).select('url -_id')).map(doc => doc.url);
 }
 
-async function saveUrls(urls) {
+async function saveUrls(urls, userId) {
   for (const url of urls) {
-    const exists = (await queryUrls({ url })).length !== 0;
-    console.log('Checking if', url, 'is present in the DB...', exists);
-    if (!exists) {
-      const newUrl = new Links({ url });
+    // const exists = (await queryUrls({ url })).length !== 0;
+    // console.log('Checking if', url, 'is present in the DB...', exists);
+    // if (!exists) {
+      const newUrl = new Links({ url, userId });
       await newUrl.save();
       console.log('Inserted', newUrl);
-    }
+    // }
   }
 }
 

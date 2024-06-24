@@ -1,7 +1,9 @@
 document.getElementById("sync").addEventListener('click', async function() {
     const tabs = await chrome.tabs.query({});
     const urls = tabs.map(tab => tab.url);
+    // const userId = ;
     console.log('Current tab urls =', urls);
+    // console.log('Current user =', userId);
 
     const response = await fetch('http://localhost:4200/sync', {
         method: 'POST',
