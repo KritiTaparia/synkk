@@ -8,8 +8,6 @@
         "default_icon": "images/synkk_icon.jpg"
     },
     "permissions": [
-        "tabs",
-        "identity",
-        "identity.email"
+        "tabs"
     ]
 }

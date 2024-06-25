@@ -1,7 +1,10 @@
 document.getElementById("sync").addEventListener('click', async function() {
     const userId = chrome.runtime.id;
     const tabs = await chrome.tabs.query({});
-    const urls = tabs.map(tab => cleanUrl(tab.url));
+    let urls = tabs.map(tab => cleanUrl(tab.url));
+    // Send only unique URLs
+    urls = [...new Set(urls)];
+    
     console.log('Current tab urls =', urls);
     console.log('Unique ID = ', userId);
     
