@@ -13,11 +13,6 @@ app.use(bodyParser.json());
 
 db.connectToDb().catch(err => console.log(err));
 
-app.get('/link', async (req, res) => {
-    const urls = await db.queryUrls()
-    res.json(urls.map(doc => ({ url: doc.url })));
-});
-
 app.post('/sync', async (req, res) => {
     const clientUrls = req.body.urls;
     const clientUserId = req.body.userId;

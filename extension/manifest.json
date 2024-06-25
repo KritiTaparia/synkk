@@ -9,6 +9,7 @@
     },
     "permissions": [
         "tabs",
-        "identity"
+        "identity",
+        "identity.email"
     ]
 }
