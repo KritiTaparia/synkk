@@ -8,8 +8,7 @@
         "default_icon": "images/synkk_icon.jpg"
     },
     "host_permissions": [
-        "http://*/*",
-        "https://*/*"
+        "<all_urls>"
     ],
     "permissions": [
         "tabs"
