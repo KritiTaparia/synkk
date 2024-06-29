@@ -13,6 +13,10 @@ app.use(bodyParser.json());
 
 db.connectToDb().catch(err => console.log(err));
 
+app.get('/', (req, res) => {
+    res.json({ success: true, message: 'Hello World!' })
+});
+
 app.post('/sync', async (req, res) => {
     const clientUrls = req.body.urls;
     const clientUserId = req.body.userId;
