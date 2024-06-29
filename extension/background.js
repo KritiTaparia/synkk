@@ -1,5 +1,5 @@
 function getAllTabUrls(callback) {
-  chrome.tabs.query({ currentWindow: true }, function(tabs) {
+  chrome.tabs.query({}, function(tabs) {
     const urls = tabs.map(tab => tab.url);
     callback(urls);
   });
