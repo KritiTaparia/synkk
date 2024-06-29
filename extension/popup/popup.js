@@ -10,7 +10,7 @@ document.getElementById("sync").addEventListener('click', async function() {
         console.log('Total local URLs = ', urls.length);
         console.log('Unique ID = ', userId);
         
-        const serverResponse = await fetch('http://localhost:4200/sync', {
+        const serverResponse = await fetch('http://synkk-kappa.vercel.app/sync', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
